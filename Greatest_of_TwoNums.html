@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greatest Number find</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs {
+            box-shadow: 0px 5px 15px black;
+            height: 300px;
+            text-align: center;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .cs h1 {
+            color: blueviolet;
+        }
+
+        input {
+            padding: 7px;
+        }
+
+        input:focus {
+            border: 2px solid blueviolet;
+            background-color: rgb(240, 224, 255);
+            outline: 1px;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: rgb(98, 22, 168);
+        }
+
+        button {
+            background: rgb(161, 61, 255);
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            padding: 5px;
+            border: 1px solid;
+            border-radius: 7px;
+            margin-top: 30px;
+
+        }
+
+        #result {
+            border: 2px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cs">
+        <h1>Greatest Of Two Numbers</h1>
+        <label for="number">Enter the FIRST Number :</label>
+        <input type="number" id="num1">
+        <br><br>
+        <label for="number">Enter the SECOND Number :</label>
+        <input type="number" id="num2">
+        <button onclick="check()">Check Now</button>
+        <p>Result</p>
+        <div id="result"></div>
+    </div>
+    <script>
+        function check() {
+            let a = document.getElementById("num1").value;
+            let b = document.getElementById("num2").value;
+            if (isNaN(a) || isNaN(b)) {
+                document.getElementById("result").innerHTML = "Plz Check & Enter Corect Numbers";
+            }
+            if (a > b) {
+                document.getElementById("result").innerHTML = "FIRST Number Is Large";
+            } else if (b > a) {
+                document.getElementById("result").innerHTML = "SECOND Number Is Large";
+            }else if(a === b){
+                document.getElementById("result").innerHTML = "FIRST & SECOND Are Equal";
+            }
+            else{
+                document.getElementById("result").innerHTML = "error";
+            }
+        }
+    </script>
+</body>
+
+</html>

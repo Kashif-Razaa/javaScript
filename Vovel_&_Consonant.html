@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vovel Number Finder</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cs {
+        box-shadow: 0px 5px 15px black;
+        height: 400px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+    }
+
+    .cs h1 {
+        color: blueviolet;
+    }
+
+    input {
+        padding: 7px;
+    }
+
+    input:focus {
+        border: 2px solid blueviolet;
+        background-color: rgb(240, 224, 255);
+        outline: 1px;
+        border-radius: 3px;
+    }
+
+    button:hover {
+        background-color: rgb(98, 22, 168);
+    }
+
+    button {
+        background: rgb(161, 61, 255);
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        padding: 5px;
+        border: 1px solid;
+        border-radius: 7px;
+        margin-top: 30px;
+
+    }
+
+    #result {
+        border: 2px solid blueviolet;
+    }
+</style>
+
+<body>
+    <div class="cs">
+
+        <h1>Vowel or Consonant Checker</h1>
+
+        <p>Koi ek letter likhein:</p>
+        <input id="letter" type="text" maxlength="1">
+
+        <br><br>
+
+        <button onclick="checkLetter()">Check</button>
+
+        <p>Result:</p>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkLetter() {
+            let ch = document.getElementById("letter").value.toLowerCase();
+
+            if (ch.length !== 1 || !isNaN(ch)) {
+                document.getElementById("result").innerHTML = "Sirf ek alphabet likhein.";
+                return;
+            }
+            if (ch === 'a' || ch === 'e' || ch === 'i' || ch === 'o' || ch === 'u') {
+                document.getElementById("result").innerHTML = "Yeh Vowel hai.";
+            } else {
+                document.getElementById("result").innerHTML = "Yeh Consonant hai.";
+            }
+        } 
+    </script>
+
+</body>
+
+</html>
